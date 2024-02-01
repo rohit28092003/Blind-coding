@@ -1,0 +1,113 @@
+
+.both{
+    // position: absolute;
+    display: flex;
+    overflow: hidden;
+box-sizing: border-box;
+.left{
+    
+    color: #EEEDEB;
+    width: 50%;
+    // height: 100vh;
+    box-sizing: border-box;
+    // margin-top: 1.5rem;
+    background-color: #262626;
+    display: flex;
+     align-items: center;
+    align-items: flex-start; 
+    /* flex-flow: column; */ 
+    flex-direction: column;  
+    
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    line-height: 30px;
+    border-right:10px solid #EEEDEB;
+    p{
+       
+        padding: 2rem;
+        padding-left: 1rem;
+        font-size: 1rem;
+        font-weight: 550;
+      
+    }
+    .timer{
+      color: #262626;
+        height: 3rem;
+        width: 8rem;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        bottom: 0;
+        background-color:#EEEDEB;
+        border-radius: 25px ;
+        margin-left: 20%;
+        margin-bottom: 20px;
+        .icon{
+            padding-left: 1.1rem;
+            padding-right: .6rem;
+            padding-top: .6rem;
+        }
+        .time{
+            font-size: large;
+        }
+      
+    }
+}
+.right{
+    width: 50%;
+    // height: 100vh;
+    // margin-top: 1.5rem;
+    background-color: rgb(25, 25, 25);
+    float:right;
+    display: flex;
+    
+    justify-content: flex-start; 
+    // align-items: flex-end; 
+    /* flex-flow: column; */ 
+    flex-direction: column;  
+ 
+    .lang{
+        width:10rem;
+        border-radius: 0;
+       
+    }
+  
+      .outputArea{
+        border-radius: 10px;
+        margin-top: 10px;
+      }
+      .editor textarea,.outputArea textarea{
+        
+        /* top: 0; */
+        resize: none;
+      }
+      #codeInput{
+        padding: 20px;
+        background-color: #262626;
+        color: #262626;
+        // pointer-events: none;
+        caret-color: #EEEDEB;
+      
+      }
+      ::selection{
+        color: #262626;
+      }
+      #compilerOutput{
+        background-color: #262626;
+        color: #262626;
+        // pointer-events: none;
+        caret-color: #EEEDEB;
+      }
+      ::selection{
+        color: #262626;
+      }
+
+      textarea:focus {
+        outline: none;
+      }
+     
+     
+      
+   
+}
+}
