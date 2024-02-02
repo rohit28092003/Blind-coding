@@ -50,9 +50,9 @@ const Timer = () => {
         <div className='icon'>
         <RxLapTimer  size={25}/>
         </div>
-    
+    <div className='time'>
         <MyTimer expiryTimestamp={time} />
-      
+        </div>
       </div>
     );
 }

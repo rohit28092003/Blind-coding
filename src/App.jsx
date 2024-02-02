@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import './style/App.scss'
 import './style/Q1.scss'
 import "./style/Header.scss"
-
+import "./style/Timer.scss"
 function App() {
   return (
     <Router>

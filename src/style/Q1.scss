@@ -30,28 +30,7 @@ box-sizing: border-box;
         font-weight: 550;
       
     }
-    .timer{
-      color: #262626;
-        height: 3rem;
-        width: 8rem;
-        position: fixed;
-        display: flex;
-        align-items: center;
-        bottom: 0;
-        background-color:#EEEDEB;
-        border-radius: 25px ;
-        margin-left: 20%;
-        margin-bottom: 20px;
-        .icon{
-            padding-left: 1.1rem;
-            padding-right: .6rem;
-            padding-top: .6rem;
-        }
-        .time{
-            font-size: large;
-        }
-      
-    }
+    
 }
 .right{
     width: 50%;

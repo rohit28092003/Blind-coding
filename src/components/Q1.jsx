@@ -1,6 +1,6 @@
 import React from 'react'
 import Compiler from './Compiler'
-import Timer from './Timer'
+
 
 const Q1 = () => {
   return (
@@ -19,9 +19,7 @@ Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus voluptas so
  ex inventore, minus ad iste magni laborum.
  </p>
  
-         <div >
-            <Timer />
-          </div> 
+        
     </div>
     </div >
     <div className='right'>

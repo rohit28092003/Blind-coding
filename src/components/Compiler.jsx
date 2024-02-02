@@ -12,10 +12,13 @@ const Compiler = () => {
     function handlePaste(event) {
       event.preventDefault();
     }
+    function handleCopy(event) {
+      event.preventDefault();
+    }
   return (
     <div > 
     <div className='lang'>
-    <Select
+    <Select 
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
@@ -24,7 +27,7 @@ const Compiler = () => {
     </div>
     <div className='code'>
     <div class="editor">
-					<textarea onPaste={(event) => handlePaste(event)}  id="codeInput" cols={93} rows={30}></textarea>
+					<textarea onPaste={(event) => handlePaste(event)} onCopy={(event) => handleCopy(event)}  id="codeInput" cols={93} rows={30}></textarea>
 		</div>
 
 		<div class="outputArea">
