@@ -10,12 +10,17 @@ const Header = () => {
        <h1>BLIND CODING</h1>
 
        
-            
+       <button className='button' role='button'>   
       <div className='problem'>
+   
         <div>
+        
         <RiPlayList2Line size={25} marginTop={20} />
         </div>
-        Problem List</div>
+        <div>Problem List</div>
+      
+        </div>
+        </button>
         <div>
         <Timer />
           </div>

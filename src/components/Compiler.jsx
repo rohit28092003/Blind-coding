@@ -25,9 +25,9 @@ const Compiler = () => {
       />
       
     </div>
-    <div className='code'>
+    <div className=''>
     <div class="editor">
-					<textarea onPaste={(event) => handlePaste(event)} onCopy={(event) => handleCopy(event)}  id="codeInput" cols={93} rows={30}></textarea>
+					<textarea onCut={(event)=>handlePaste(event)} onPaste={(event) => handlePaste(event)} onCopy={(event) => handleCopy(event)}  id="codeInput" cols={93} rows={30}></textarea>
 		</div>
 
 		<div class="outputArea">

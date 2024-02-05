@@ -19,6 +19,8 @@ nav{
         justify-content: center;
         align-items: center;
         gap: .5rem;
+       
+        }
     }
     a{
         color: #EBEBEB;
@@ -93,4 +95,15 @@ nav{
     padding-left: .5rem;
     
   }
+
+  .button{
+    border-radius:.5rem ;
+    height: 3rem;
+    padding-left: .4rem;
+    padding-right: .4rem;
+    font-size: 1rem;
+  }
+.button:hover{
+  opacity:0.8;
+cursor: pointer;
 }

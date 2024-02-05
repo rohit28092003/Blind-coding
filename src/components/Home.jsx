@@ -8,8 +8,10 @@ const Home = () => {
     {/* <div><Q1 /></div>
     <div><Q1 /></div>
     <div><Q1 /></div> */}
+
     </>
   )
 }
 
 export default Home
+
