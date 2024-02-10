@@ -19,8 +19,9 @@ nav{
         justify-content: center;
         align-items: center;
         gap: .5rem;
-       
+     
         }
+        
     }
     a{
         color: #EBEBEB;
@@ -81,11 +82,13 @@ nav{
   .button-48:hover:before {
     animation: opacityFallbackIn 0s step-start forwards;
     clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+    
   }
   
   .button-48:after {
     background-color: #FFFFFF;
   }
+ 
   
   .button-48 span {
     z-index: 1;
@@ -102,8 +105,10 @@ nav{
     padding-left: .4rem;
     padding-right: .4rem;
     font-size: 1rem;
+   
   }
 .button:hover{
   opacity:0.8;
+ 
 cursor: pointer;
 }

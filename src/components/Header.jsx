@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { RiPlayList2Line } from "react-icons/ri";
 import { VscRunAll } from "react-icons/vsc";
 import Timer from './Timer';
+import DrawerBasic from './Drawer';
+
 const Header = () => {
   return (
     <nav>
@@ -10,17 +12,14 @@ const Header = () => {
        <h1>BLIND CODING</h1>
 
        
-       <button className='button' role='button'>   
+       {/* <button className='button' role='button'>    */}
       <div className='problem'>
    
-        <div>
-        
-        <RiPlayList2Line size={25} marginTop={20} />
-        </div>
-        <div>Problem List</div>
+        <DrawerBasic />
+        {/* <div>Problem List</div> */}
       
         </div>
-        </button>
+        {/* </button> */}
         <div>
         <Timer />
           </div>
