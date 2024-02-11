@@ -112,3 +112,12 @@ nav{
  
 cursor: pointer;
 }
+.problem{
+  button{
+    color: #EBEBEB;
+    &:hover{
+      color: #262626;
+    }
+  }
+  
+}

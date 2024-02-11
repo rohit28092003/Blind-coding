@@ -45,12 +45,19 @@ box-sizing: border-box;
     /* flex-flow: column; */ 
     flex-direction: column;  
  
-    .lang{
-        width:10rem;
+    select{
+        width:6rem;
         border-radius: 0;
-       
+        height:2.8rem;
     }
-  
+          
+           
+  .output{
+    margin-top:-1rem ;
+    color: #EEEDEB;
+    font-size:large;
+    padding: 5px;
+  }
       .outputArea{
         border-radius: 10px;
         margin-top: 10px;
@@ -60,7 +67,7 @@ box-sizing: border-box;
         /* top: 0; */
         resize: none;
       }
-      #codeInput{
+      .codeInput{
         padding: 20px;
         background-color: #262626;
         color: #262626;
@@ -69,11 +76,11 @@ box-sizing: border-box;
       
       }
       ::selection{
-        color: #262626;
+        color: hsl(0, 0%, 15%);
       }
       #compilerOutput{
         background-color: #262626;
-        color: #262626;
+        color: #EEEDEB;
         // pointer-events: none;
         caret-color: #EEEDEB;
       }
@@ -84,9 +91,11 @@ box-sizing: border-box;
       textarea:focus {
         outline: none;
       }
-     
-     
-      
    
 }
+}
+.side{
+  display: flex;
+  justify-content:space-between;
+  align-items:center
 }
