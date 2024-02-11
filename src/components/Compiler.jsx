@@ -19,7 +19,7 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
   
     const [formData, setformDataa] = useState({
       code:"",
-      langid:"C++"
+      langid:''
     })
     const {code,langid} = formData;
     const handlechange = (e)=>{
@@ -32,23 +32,24 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
         }
       ))
     }
-     const languages = ['54', '45', '71', '62'];
+     const languages = ['54', '50', '71', '62'];
   
     const handlesubmit = async (e)=>{
       e.preventDefault();
       console.log("submitting")
       try {
             const program = {
-              script: code,
-              language: 'php',
-              versionIndex:"0",
+              source_code: code,
+              language:71,
+              qNo:1,
+              // versionIndex:"0",
               // stdin: "",
-              clientId: "222a2ef84f6881409d32ae21369d1a32",
-              clientSecret:"67872757630a355db890ee74b6b20926cb9e025dbb444182df2bd2700fc64af1"
+              // clientId: "222a2ef84f6881409d32ae21369d1a32",
+              // clientSecret:"67872757630a355db890ee74b6b20926cb9e025dbb444182df2bd2700fc64af1"
             };
             console.log(program)
       
-            const response = await fetch('cors-anywhere.https://api.jdoodle.com/execute',{
+            const response = await fetch('https://blind-coding-backend.vercel.app/runCode',{
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               // json:program,
@@ -133,7 +134,7 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
 
 		<div class="outputArea">
     <div className='output'>Output:</div>
-					<textarea id="compilerOutput" cols={100} rows={8}></textarea>
+					<textarea id="compilerOutput" cols={100} rows={8} readOnly></textarea>
 		</div>
     
     </div>

@@ -1,10 +1,11 @@
 import React from 'react'
 import Compiler from './Compiler'
-
+import Header from './Header'
 
 const Question4 = () => {
   return (
     <>
+     <Header/>
     <div className='both'>
     <div className='left'>
       <div >
