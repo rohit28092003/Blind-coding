@@ -1,9 +1,22 @@
 import React,{useState, useEffect} from 'react';
 import { RxHeight } from 'react-icons/rx';
 import { VscRunAll } from "react-icons/vsc";
- import Counter from './Counter';
+
+
 
 const Compiler = ({output,status,testInput, setTestInput}) => {
+  // const [count, setCount] = useState(0);
+  // useEffect(() => {
+  //   const storedCount = localStorage.getItem('my-counter');
+  //   if (storedCount) {
+  //     setCount(parseInt(storedCount));
+  //   }
+  // }, []);
+  
+  // useEffect(() => {
+  //   localStorage.setItem('my-counter', count);
+  // }, [count]);
+  
     const [formData, setformDataa] = useState({
       code:"",
       langid:"C++"
@@ -52,7 +65,7 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
             console.error('Error:', error);
             
           }
-
+          // setCount(count + 1);
   
     }
 
@@ -83,18 +96,21 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
         </select>
    
       </div>
-<div><Counter /></div>
+
       {/* run button-> */}
        <div className='run'>
     
-      <button   class="button-48" role="button"> 
+      <button  class="button-48" role="button">
       <VscRunAll size={18} /><span class="text"  
       >
         
-        Run</span></button>
+        Run</span>
+        {/* <span>Count: {count}</span> */}
+         </button>
+        
     </div>
 
-{/* counter */}
+
      
  
   
