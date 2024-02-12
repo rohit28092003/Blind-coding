@@ -56,8 +56,6 @@ const Compiler = (props) => {
               user:"abc123@gmail.com"
               // versionIndex:"0",
               // stdin: "",
-              // clientId: "222a2ef84f6881409d32ae21369d1a32",
-              // clientSecret:"67872757630a355db890ee74b6b20926cb9e025dbb444182df2bd2700fc64af1"
             };
             //console.log(program)
       
