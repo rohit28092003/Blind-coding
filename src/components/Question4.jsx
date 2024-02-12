@@ -18,7 +18,7 @@ Output: [2,4,3,1] or [4,2,1,3]
     </div>
     </div >
     <div className='right'>
-        <Compiler />
+        <Compiler qNo='4'/>
     </div>
     </ div>
     </>

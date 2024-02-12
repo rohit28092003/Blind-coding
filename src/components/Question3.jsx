@@ -21,7 +21,7 @@ After merging the two sorted arrays,<br></br>
     </div>
     </div >
     <div className='right'>
-        <Compiler />
+        <Compiler qNo='3'/>
     </div>
     </ div>
     </>

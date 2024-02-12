@@ -4,18 +4,20 @@ import { VscRunAll } from "react-icons/vsc";
 
 
 
-const Compiler = ({output,status,testInput, setTestInput}) => {
-  // const [count, setCount] = useState(0);
-  // useEffect(() => {
-  //   const storedCount = localStorage.getItem('my-counter');
-  //   if (storedCount) {
-  //     setCount(parseInt(storedCount));
-  //   }
-  // }, []);
+const Compiler = (props) => {
+  const  {qNo} = props
+  console.log(qNo)
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const storedCount = localStorage.getItem('my-counter');
+    if (storedCount) {
+      setCount(parseInt(storedCount));
+    }
+  }, []);
   
-  // useEffect(() => {
-  //   localStorage.setItem('my-counter', count);
-  // }, [count]);
+  useEffect(() => {
+    localStorage.setItem('my-counter', count);
+  }, [count]);
   
     const [formData, setformDataa] = useState({
       code:"",
@@ -36,12 +38,13 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
   
     const handlesubmit = async (e)=>{
       e.preventDefault();
+      setCount(count + 1);
       console.log("submitting")
       try {
             const program = {
               source_code: code,
-              language:71,
-              qNo:1,
+              language:langid,
+              qNo:props.qNo
               // versionIndex:"0",
               // stdin: "",
               // clientId: "222a2ef84f6881409d32ae21369d1a32",
@@ -66,7 +69,7 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
             console.error('Error:', error);
             
           }
-          // setCount(count + 1);
+          
   
     }
 
@@ -90,10 +93,10 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
         name="langid"
         value={formData.langid}
       >
-        <option value={0}>C++</option>
-        <option value={1}>C</option>
-        <option value={2}>Python</option>
-        <option value={3}>Java</option>
+        <option value={54}>C++</option>
+        <option value={50}>C</option>
+        <option value={71}>Python</option>
+        <option value={62}>Java</option>
         </select>
    
       </div>
@@ -106,7 +109,7 @@ const Compiler = ({output,status,testInput, setTestInput}) => {
       >
         
         Run</span>
-        {/* <span>Count: {count}</span> */}
+        <span>Count: {count}</span>
          </button>
         
     </div>

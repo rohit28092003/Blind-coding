@@ -24,7 +24,7 @@ const Question2 = () => {
         </div>
         </div >
         <div className='right'>
-            <Compiler />
+            <Compiler qNo='2'/>
         </div>
         </ div>
         </>

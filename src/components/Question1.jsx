@@ -20,7 +20,7 @@ const Question1 = () => {
     </div>
     </div >
     <div className='right'>
-        <Compiler />
+        <Compiler qNo='1' />
     </div>
     </ div>
     </>
