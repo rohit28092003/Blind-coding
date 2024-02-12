@@ -52,7 +52,7 @@ const Compiler = (props) => {
               language:langid,
               qNo:props.qNo,
               runCount:count,
-              score:"200",
+              score:"100",
               user:"abc123@gmail.com"
               // versionIndex:"0",
               // stdin: "",
@@ -79,13 +79,11 @@ const Compiler = (props) => {
             if(data.output?.message){
               setOutput(data.output.message)
             }else{
-              setOutput("Error")
+              setOutput(data.output.output)
             }
-            
             //console.log(data)
           } catch (error) {
             console.error('Error:', error);
-            
           }
           
   
