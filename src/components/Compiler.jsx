@@ -112,8 +112,8 @@ const Compiler = (props) => {
       {/* run button-> */}
        <div className='run'>
     
-      <button  class="button-48" role="button">
-      <VscRunAll size={18} /><span class="text"  
+      <button  className="button-48" role="button">
+      <VscRunAll size={18} /><span className="text"  
       >
         
         Run</span>
@@ -130,7 +130,7 @@ const Compiler = (props) => {
  
     </div>
     <div className=''>
-    <div class="editor">
+    <div className="editor">
 					<textarea 
           onCut={(event)=>handlePaste(event)} 
           onPaste={(event) => handlePaste(event)}
@@ -143,11 +143,11 @@ const Compiler = (props) => {
           cols={93} rows={30}></textarea>
 		</div>
 
-		<div class="outputArea">
+		<div className="outputArea">
     <div className='output'>Output:</div>
 					<textarea id="compilerOutput" cols={100} rows={8} readOnly>
             {
-              Output
+              `Output:${Output}`
             }
           </textarea>
 		</div>
