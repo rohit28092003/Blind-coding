@@ -14,7 +14,7 @@ const Compiler = (props) => {
     if (storedCount) {
       setCount(parseInt(storedCount));
     }
-  }, []);
+  },[]);
   
   useEffect(() => {
     localStorage.setItem('my-counter', count);
@@ -40,9 +40,9 @@ const Compiler = (props) => {
     const handlesubmit = async (e)=>{
       e.preventDefault();
       setCount(count + 1);
-      console.log("submitting")
+      //console.log("submitting")
       if(!langid){
-        console.log("error no lang  id")
+        //console.log("error no lang  id")
         return;
 
       }
@@ -50,13 +50,16 @@ const Compiler = (props) => {
             const program = {
               source_code: code,
               language:langid,
-              qNo:props.qNo
+              qNo:props.qNo,
+              runCount:count,
+              score:"200",
+              user:"abc123@gmail.com"
               // versionIndex:"0",
               // stdin: "",
               // clientId: "222a2ef84f6881409d32ae21369d1a32",
               // clientSecret:"67872757630a355db890ee74b6b20926cb9e025dbb444182df2bd2700fc64af1"
             };
-            console.log(program)
+            //console.log(program)
       
             const response = await fetch('https://blind-coding-backend.vercel.app/runCode',{
               method: 'POST',
@@ -70,9 +73,16 @@ const Compiler = (props) => {
             // }
       
             const data = await response.json();
-            console.log(data.output)
-            setOutput(data.output.message)
-            console.log(data)
+            // if('message' in data.message){
+            //   console.log("error")
+            // }
+            if(data.output?.message){
+              setOutput(data.output.message)
+            }else{
+              setOutput("Error")
+            }
+            
+            //console.log(data)
           } catch (error) {
             console.error('Error:', error);
             
@@ -117,7 +127,7 @@ const Compiler = (props) => {
       >
         
         Run</span>
-        <span>Count: {count}</span>
+        <span>Count:{count}</span>
          </button>
         
     </div>
@@ -143,14 +153,34 @@ const Compiler = (props) => {
           cols={93} rows={30}></textarea>
 		</div>
 
-		<div className="outputArea">
+
+    <div style={{color:"white",padding:"20px",backgroundColor:"#262626",height:"500px"}} className='output'>
+      
+      {
+        Output ? (
+          <div>
+            <div style={{color:"white",fontSize:"20px"}}>
+                {`Output: ${Output}`}
+              </div>
+          </div>
+        ) : null
+      }
+    </div>
+
+		{/* <div className="outputArea">
     <div className='output'>Output:</div>
-					<textarea id="compilerOutput" cols={100} rows={8} readOnly>
-            {
-              `Output:${Output}`
-            }
+					<textarea id="compilerOutput" cols={100} rows={10} style={{color:"white"}}>
+          <div>
+          {
+            Output ? (<div>
+              <div>
+                {Output}
+              </div>
+            </div>) : null
+          }
+          </div>
           </textarea>
-		</div>
+		</div> */}
     
     </div>
     </form>
