@@ -8,6 +8,7 @@ const Compiler = (props) => {
   const  {qNo} = props
   console.log(qNo)
   const [count, setCount] = useState(0);
+  const [Output, setOutput] = useState("")
   useEffect(() => {
     const storedCount = localStorage.getItem('my-counter');
     if (storedCount) {
@@ -21,7 +22,7 @@ const Compiler = (props) => {
   
     const [formData, setformDataa] = useState({
       code:"",
-      langid:''
+      langid:'54'
     })
     const {code,langid} = formData;
     const handlechange = (e)=>{
@@ -40,6 +41,11 @@ const Compiler = (props) => {
       e.preventDefault();
       setCount(count + 1);
       console.log("submitting")
+      if(!langid){
+        console.log("error no lang  id")
+        return;
+
+      }
       try {
             const program = {
               source_code: code,
@@ -64,6 +70,8 @@ const Compiler = (props) => {
             // }
       
             const data = await response.json();
+            console.log(data.output)
+            setOutput(data.output.message)
             console.log(data)
           } catch (error) {
             console.error('Error:', error);
@@ -137,7 +145,11 @@ const Compiler = (props) => {
 
 		<div class="outputArea">
     <div className='output'>Output:</div>
-					<textarea id="compilerOutput" cols={100} rows={8} readOnly></textarea>
+					<textarea id="compilerOutput" cols={100} rows={8} readOnly>
+            {
+              Output
+            }
+          </textarea>
 		</div>
     
     </div>
