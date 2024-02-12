@@ -1,32 +1,19 @@
 import React,{ useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-// import axios from "axios";
-// import Link from "next/link";
+
+ 
 const preventRefresh = (e) => {
 	e.preventDefault();
 };
 
 export default function Login() {
+	const navigate = useNavigate();
  const [name, setName] = useState("");
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
  
-
-//  const handleSubmit = async (event) => {
-//   event.preventDefault();
-//   try {
-//    setLoading(true);
-//    const { data } = await axios.post(`/api/register`, {
-//     name,
-//     email,
-//     password,
-//    });
-//    setLoading(false);
-//   } catch (err) {
-//    setLoading(false);
-//   }
-//  };
 	return (
 		<div className="wrapper signIn">
 			<div className="form">
@@ -45,7 +32,7 @@ export default function Login() {
 						value={email}
       onChange={(e) => setEmail(e.target.value)} />
 					</div>
-					<button type="submit" onClick={preventRefresh}>
+					<button type="submit" onClick={()=>navigate('/ques1')}>
 						Submit
 					</button>
 				</form>
