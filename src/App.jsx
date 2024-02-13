@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Login from './components/pages/Login'
 import Signup from './components/pages/Signup'
 // import Error from './components/Error'
+import PrivateRoute from './components/PrivateRoute'
 
 import './style/App.scss'
 import './style/Q1.scss'
@@ -25,13 +26,41 @@ function App() {
     
   
     <Routes>
-      <Route path="/" element={<Question1 />} exact />
+      <Route path="/" element={<Login/>}/>
       {/* <Route path="/signup" element={<Signup />} /> */}
+      {/* <Route path="/login" element={<Login></Login>}></Route> */}
+      <Route path="/ques1"
+      element={
+        <PrivateRoute>
+          <Question1></Question1>
+        </PrivateRoute>
+      }
+      >
 
-      <Route path="/ques1" element={<Question1 />}></Route>
-      <Route path="/ques2" element={<Question2 />}></Route>
-      <Route path="/ques3" element={<Question3 />}></Route>
-      <Route path="/ques4" element={<Question4 />}></Route>
+
+      </Route>
+      <Route path="/ques2" element={
+        <PrivateRoute>
+          <Question2></Question2>
+        </PrivateRoute>
+      }></Route>
+      <Route path="/ques3" 
+      element={
+        <PrivateRoute>
+          <Question3></Question3>
+        </PrivateRoute>
+      }
+      >
+
+      </Route>
+      <Route path="/ques4" 
+      element={
+        <PrivateRoute>
+          <Question4></Question4>
+        </PrivateRoute>
+      }>
+
+      </Route>
    
 
     </Routes>

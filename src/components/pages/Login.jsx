@@ -1,5 +1,5 @@
 import React,{ useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, json } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -10,35 +10,53 @@ const preventRefresh = (e) => {
 
 export default function Login() {
 	const navigate = useNavigate();
- const [name, setName] = useState("");
- const [email, setEmail] = useState("");
- const [password, setPassword] = useState("");
+	const[formdata,setformdata]=useState({
+		name:"",
+		email:""
+	})
+	const{name,email} = formdata
+	const handlechange = (e)=>{
+		setformdata((prev)=>({
+			...prev,
+			[e.target.name]:e.target.value
+		}))
+	}
+
+	const handlesubmit = (e)=>{
+		e.preventDefault();
+		localStorage.setItem(
+			"login",JSON.stringify(formdata)
+		)
+		navigate('/ques1')
+	}
  
 	return (
 		<div className="wrapper signIn">
 			<div className="form">
 				<div className="heading">LOGIN</div>
-				<form>
+				<form onSubmit={handlesubmit}>
 					<div>
 						<label htmlFor="name">Name</label>
-						<input type="text" id="name" placeholder="Enter your name" required
+						<input type="text" id="name" name='name' placeholder="Enter your name" required
 						value={name}
-						onChange={(e) => setName(e.target.value)}
+						onChange={handlechange}
 					  />
 					</div>
 					<div>
 						<label htmlFor="e-mail" >E-Mail</label>
-						<input type="email" id="e-mail" placeholder="Enter you mail"required
-						value={email}
-      onChange={(e) => setEmail(e.target.value)} />
+						<input type="email" id="e-mail" placeholder="Enter you mail"
+						required
+						name='email'
+						value={email} onChange={handlechange}
+       />
 					</div>
-					<button type="submit" onClick={()=>navigate('/ques1')}>
+					<button type="submit">
 						Submit
 					</button>
 				</form>
-				<p>
+				{/* <p>
 					Don't have an account ? <Link to="/signup"> Sign In </Link>
-				</p>
+				</p> */}
 			</div>
 		</div>
 	);
