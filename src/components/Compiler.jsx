@@ -79,7 +79,10 @@ const Compiler = (props) => {
       // }
       if (data.output?.message) {
         setOutput(data.output?.message);
-        setflag("true");
+        if(data.output.message==="Correct"){
+          setflag("true");
+        }
+        
       } else {
         setOutput(data.output?.output);
       }
