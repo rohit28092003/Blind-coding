@@ -12,13 +12,13 @@ const Question1 = () => {
         <p>Find the Missing Number: Given an array of n-1 integers in the range from 1
            to n, find the missing number.<br />
            eg.1: <br />
-           [2, 4, 1, 6, 5, 3, 7] <br />
+           [1, 2, 3, 4, 5, 6, 7] <br />
            output:8 <br />
-            Input:[4, 1, 2, 5] <br />
+            Input:[1, 2, 4, 5] <br />
            Output: 3<br />
            <br />
            you have to take given below input in your code it have to give corresponding output f<br />
-           Input: [2, 4, 1, 6, 3]<br />
+           Input: [1, 2, 3, 4, 6]<br />
            Output: 5<br />
            If it gives correct then output tab shows correct otherwise points will be deducted.
            <br /><br />
