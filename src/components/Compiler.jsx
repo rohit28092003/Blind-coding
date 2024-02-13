@@ -9,7 +9,7 @@ const Compiler = (props) => {
   console.log(details)
   const [count, setCount] = useState(0);
   const [Output, setOutput] = useState("");
-  const [flag, setflag] = useState(false);
+  const [flag, setflag] = useState("false");
   useEffect(() => {
     const storedCount = localStorage.getItem("my-counter");
     if (storedCount) {
@@ -52,7 +52,8 @@ const Compiler = (props) => {
         qNo: props.qNo,
         runCount: count,
         score: "100",
-        user: user
+        user: user,
+        flag:flag
         // versionIndex:"0",
         // stdin: "",
       };
@@ -77,10 +78,10 @@ const Compiler = (props) => {
       //   console.log("error")
       // }
       if (data.output?.message) {
-        setOutput(data.output.message);
-        setflag(true);
+        setOutput(data.output?.message);
+        setflag("true");
       } else {
-        setOutput(data.output.output);
+        setOutput(data.output?.output);
       }
       //console.log(data)
     } catch (error) {
@@ -117,7 +118,7 @@ const Compiler = (props) => {
 
           {/* run button-> */}
           <div className="run">
-            <button className="button-48" role="button" disabled={flag}>
+            <button className="button-48" role="button">
               <VscRunAll size={18} />
               <span className="text">Run</span>
               <span>Count:{count}</span>
