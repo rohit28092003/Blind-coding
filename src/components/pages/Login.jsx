@@ -22,11 +22,17 @@ export default function Login() {
 		}))
 	}
 
-	const handlesubmit = (e)=>{
+	const handlesubmit = async (e)=>{
 		e.preventDefault();
 		localStorage.setItem(
 			"login",JSON.stringify(formdata)
 		)
+		const response = await fetch("https://blind-coding-backend.vercel.app/signup",{
+			method:"POST",
+			headers: { "Content-Type": "application/json" },
+          // json:program,
+          	body: JSON.stringify(formdata),
+		})
 		navigate('/ques1')
 	}
  

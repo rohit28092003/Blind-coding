@@ -117,13 +117,25 @@ const Compiler = (props) => {
           </div>
 
           {/* run button-> */}
-          <div className="run">
+          {
+            flag=="false" && (
+              <div className="run">
+              <button className="button-48" role="button">
+                <VscRunAll size={18} />
+                <span className="text">Run</span>
+                <span>Count:{count}</span>
+              </button>
+            </div>
+
+            ) 
+          }
+          {/* <div className="run">
             <button className="button-48" role="button">
               <VscRunAll size={18} />
               <span className="text">Run</span>
               <span>Count:{count}</span>
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="">
           <div className="editor">
