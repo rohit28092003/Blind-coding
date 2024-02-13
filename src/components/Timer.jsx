@@ -44,7 +44,7 @@ function MyTimer({ expiryTimestamp }) {
   
 const Timer = () => {
     const time = new Date();
-    time.setSeconds(time.getSeconds() + 3*1200); // 10 minutes timer
+    time.setSeconds(time.getSeconds() + 2700); // 10 minutes timer
     return (
         <div className='timer'>
         <div className='icon'>
